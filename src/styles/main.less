@@ -19,10 +19,18 @@ body {
   color: #colors[textColor];
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   
   //Usando somente o max-width para definir o breakpoint temos que ter atenção a cascata de estilos. Colocamos o breakpoint mobile por último para que ele tenha prioridade. Caso contrario, devemos adicionar os limitadores no tablet (min e max-width no exemplo do tablet) para que o mobile não seja afetado.
 
@@ -37,8 +45,7 @@ body {
 }
 
 header {
-  padding: 24px;
-
+  padding-bottom: 24px;
   .profile-avatar {
     display: block;
     margin: 0 auto 24px;
@@ -73,13 +80,33 @@ header {
   width: 100%;
   margin: 0 auto;
 
-  li {
-    list-style: none;
-
     img {
       transition: all ease 0.2s;
       &:hover {
         transform: scale(1.3);
+      }
+    }
+  }
+
+.projects-list {
+  margin-top: 32px;
+  &-item {
+    a {
+      text-decoration: none;
+      background-color: #colors[buttonColor];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #colors[textColor];
+      font-weight: bold;
+      border-radius: 30px;
+      border: 2px solid #colors[buttonColor];
+      transition: all ease 0.5s;
+
+      &:hover {
+        background-color: transparent;
+        color: #colors[buttonColor];
       }
     }
   }
