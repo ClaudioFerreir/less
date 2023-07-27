@@ -1,6 +1,27 @@
 @import 'variaveis.less';
+@breakpointMobile: ~"(max-width: 768px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
 body {
   background-color: @corDeFundo;
   color: @corDosTextos;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  
+  //Usando somente o max-width para definir o breakpoint temos que ter atenção a cascata de estilos. Colocamos o breakpoint mobile por último para que ele tenha prioridade. Caso contrario, devemos adicionar os limitadores no tablet (min e max-width no exemplo do tablet) para que o mobile não seja afetado.
+
+  
+  @media @breakpointMobile {
+    max-width: 70%;
+    background-color: red;
+  }
+
+  @media @breakpointTablet {
+    max-width: 80%;
+    background-color: green;
+  }
 }
